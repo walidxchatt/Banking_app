@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - My Bank App{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome G! Time to handle that money baby</h1>
+        <p class="lead">With our futuristic banking app, managing money has never been easier</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Your Current Amount</h2>
+                <p class="lead">Amount: ${{ current_amount }}</p>
+            </div>
+            <div class="col-md-6">
+                <h2>Manage Your Money</h2>
+                <form action="/add_money" method="post">
+                    <div class="form-group">
+                        <label for="addAmount">Add Money: That's what a n*gga does</label>
+                        <input type="number" class="form-control" id="addAmount" name="amount" placeholder="Enter amount" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Add Money</button>
+                </form>
+
+                <form action="/withdraw_money" method="post">
+                    <div class="form-group">
+                        <label for="withdrawAmount">Withdraw Money: Real baller sh*t</label>
+                        <input type="number" class="form-control" id="withdrawAmount" name="amount" placeholder="Enter amount" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger">Withdraw Money</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
